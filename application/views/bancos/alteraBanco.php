@@ -3,14 +3,13 @@
 <head>
 	<meta charset="utf-8">
 	<title>Pessoas</title>
-
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/materialize/css/materialize.min.css'); ?>">
 </head>
 <body>
 	<br><br><br>
 
 	<div class="container">
-		<h4> Alterar Dados</h4>
+		<h4> Editar Banco </h4>
 		<form method="POST" action="<?= site_url('alterar-banco').'/'.$banco[0]['id_banco']; ?>" onsubmit="return valida_form(this)">
 			<div class="row">
 				<div class="input-field col s6">
@@ -32,11 +31,11 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col left">
-					<button type="submit" class="btn orange" >Alterar</button>
-				</div>
 				<div class="col center">
-					<a href="<?= site_url('listar-bancos'); ?>" class="btn red" >Cancelar</a>
+					<a href="<?= site_url('listar-bancos'); ?>" class="btn red" >Voltar</a>
+				</div>
+				<div class="col left">
+					<button type="submit" class="btn green" >Salvar</button>
 				</div>
 			</div>
 		</form>

@@ -53,7 +53,7 @@ $route['default_controller'] = 'BancosController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['home'] = "BancosController/index";
+$route['criar-banco'] = "BancosController/criarBanco";
 $route['novo-banco'] = "BancosController/novoBanco";
 $route['listar-bancos'] = "BancosController/listarBancos";
 

@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div class="container">
-		<h3> Cadastrar Banco </h3>
+		<h4> Novo Banco </h4> <br>
 		<form method="POST" action="<?= site_url('novo-banco'); ?>" onsubmit="return valida_form(this)"> 
 			<div class="row">
 				<div class="input-field col s6">
@@ -23,11 +23,11 @@
 				</div>
 			</div>
 			<div class="row">
+				<div class="col center">
+					<a href="<?= site_url('listar-bancos'); ?>" class="btn blue"> Voltar </a>
+				</div>
 				<div class="col left">
 					<button type="submit" class="btn green" >Criar</button>
-				</div>
-				<div class="col center">
-					<a href="<?= site_url('listar-bancos'); ?>" class="btn blue"> Consultar </a>
 				</div>
 			</div>
 		</form>

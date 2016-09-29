@@ -9,11 +9,12 @@
 <body>
 	<div class="container">
 		<div class="col s12">
-			<h4> Lista de Bancos </h4>
+			<h4> Bancos </h4> <br>
+			<a class="btn green" href="<?= site_url('criar-banco');?>">Novo</a> <br> <br>
 			<table>
 				<thead>
 					<tr>
-						<th>ID</th>
+						<th>Código</th>
 						<th>Nome</th>
 						<th>Telefone</th>
 					</tr>
@@ -24,7 +25,7 @@
 						<td><?= $banco['id_banco'];?> </td>
 						<td><?= $banco['nome_banco']; ?></td>
 						<td><?= $banco['telefone_banco']; ?></td>
-						<td><a class="right btn red" href="<?= site_url('deletar-banco')."/".$banco['id_banco'];?>">EXCLUIR</a></td>
+						<td><a class="right btn red " onclick="confirma_exclusao()" href="<?= site_url('deletar-banco')."/".$banco['id_banco'];?>">EXCLUIR</a></td>
 						<td><a class="btn orange" href="<?= site_url('alterar-banco')."/".$banco['id_banco'];?>">ALTERAR</a></td>
 					</tr>
 				<?php 
@@ -32,10 +33,14 @@
 				?>
 				</tbody>
 			</table>
-			<a class="btn grey" href="<?= site_url('home');?>">Voltar</a>
 		</div>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script type="text/javascript" src="<?= base_url('assets/materialize/js/materialize.min.js'); ?>"></script>
+	<script type="text/javascript" language="javascript">
+			function confirma_exclusao(){
+				alert("Deseja excluir?");
+			}
+	</script>
 </body>
 </html>
