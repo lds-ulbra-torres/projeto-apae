@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Pessoas</title>
+	<title>Bancos</title>
 
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/materialize/css/materialize.min.css'); ?>">
 </head>
@@ -20,7 +20,10 @@
 					</tr>
 				</thead>
 				<tbody>
-				<?php  foreach($bancos as $banco){?> 
+				<?php
+					if(count($bancos)>=1){
+					foreach($bancos as $banco){
+				?> 
 					<tr>
 						<td><?= $banco['id_banco'];?> </td>
 						<td><?= $banco['nome_banco']; ?></td>
@@ -30,6 +33,7 @@
 					</tr>
 				<?php 
 					} 
+				}
 				?>
 				</tbody>
 			</table>

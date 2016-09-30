@@ -10,13 +10,9 @@ class BancosController extends CI_Controller {
 
 
 	public function index(){
+		$data = array();
 		$data['bancos'] = $this->BancosModel->listarBancos();
-		if($data['bancos'] == ""){
-			echo("Nenhum Banco cadastrado.");
-		}else{
-			$this->load->view('bancos/listaDeBancos',$data);
-		}
-		
+		$this->load->view('bancos/listaDeBancos',$data);
 	}
 
 	public function criarBanco(){
@@ -37,12 +33,8 @@ class BancosController extends CI_Controller {
 	}
 
 	public function listarBancos(){
-		$data['bancos'] = $this->BancosModel->listarBancos();
-		if($data['bancos'] == ""){
-			echo("Nenhum Banco cadastrado.");
-		}else{
-			$this->load->view('bancos/listaDeBancos',$data);
-		}
+		$bancos = $this->BancosModel->listarBancos();
+		//$this->load->view('bancos/listaDeBancos',array('bancos' => $bancos ));
 	}
 
 	public function deletarBanco($id_banco){

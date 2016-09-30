@@ -24,7 +24,7 @@
 			</div>
 			<div class="row">
 				<div class="col center">
-					<a href="<?= site_url('listar-bancos'); ?>" class="btn blue"> Voltar </a>
+					<a href="<?= site_url(''); ?>" class="btn blue"> Voltar </a>
 				</div>
 				<div class="col left">
 					<button type="submit" class="btn green" >Criar</button>
