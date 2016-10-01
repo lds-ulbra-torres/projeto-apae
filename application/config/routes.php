@@ -49,6 +49,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'welcome';
+$route['default_controller'] = 'FrequencyController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+//Rotas de Frequencia
+//Insert
+$route['insert-view'] = 'FrequencyController/viewInsert';
+$route['insert'] = 'FrequencyController/insert';
+//Update
+$route['update-view/(:num)'] = 'FrequencyController/viewUpdate/$1';
+$route['update/(:num)'] = 'FrequencyController/update/$1';
+//Delete
+$route['delete/(:num)'] = 'FrequencyController/delete/$1';
