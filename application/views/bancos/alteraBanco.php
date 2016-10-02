@@ -26,7 +26,7 @@
 			</div>
 			<div class="row">
 				<div class="input-field col s6">
-					<input type="text" value="<?= $banco[0]['telefone_banco']; ?> " id="telefone" name="banco[telefone_banco]">
+					<input type="text" attrname="telephone" value="<?= $banco[0]['telefone_banco']; ?> " id="telefone" name="banco[telefone_banco]">
 					<label for="telefone" >TELEFONE</label>
 				</div>
 			</div>
