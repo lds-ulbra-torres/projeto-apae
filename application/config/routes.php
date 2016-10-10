@@ -49,14 +49,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'BancosController';
+$route['default_controller'] = 'BanksController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['criar-banco'] = "BancosController/criarBanco";
-$route['novo-banco'] = "BancosController/novoBanco";
-$route['listar-bancos'] = "BancosController/listarBancos";
+$route['create-bank'] = "BanksController/createBank";
+$route['new-bank'] = "BanksController/newBank";
+$route['list-banks'] = "BanksController/listBanks";
 
-$route['deletar-banco/(:num)'] = "BancosController/deletarBanco/$1";
+$route['delete-bank/(:num)'] = "BanksController/deleteBank/$1";
 
-$route['alterar-banco/(:num)'] = "BancosController/alterarBanco/$1";
+$route['update-bank/(:num)'] = "BanksController/updateBank/$1";
