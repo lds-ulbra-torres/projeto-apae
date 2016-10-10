@@ -30,7 +30,7 @@
 						<td><?= $bank['id_bank'];?> </td>
 						<td><?= $bank['name_bank']; ?></td>
 						<td><?= $bank['phone_bank']; ?></td>
-						<td><a class="btn btn-danger" onclick="confirma_exclusao()" href="<?= site_url('delete-bank')."/".$bank['id_bank'];?>">EXCLUIR</a></td>
+						<td><a type="button" data-toggle="modal" data-target=".bs-example-modal-sm" class="btn btn-danger" >EXCLUIR</a></td>
 						<td><a class="btn btn-warning" href="<?= site_url('update-bank')."/".$bank['id_bank'];?>">ALTERAR</a></td>
 					</tr>
 				<?php 
@@ -41,12 +41,33 @@
 			</table>
 		</div>
 	</div>
+
+	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+	  <div class="modal-dialog modal-sm" role="document">
+	    <div class="modal-content">
+	      	<div class="modal-header">
+        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        			<span aria-hidden="true">&times;</span>
+        		</button>
+        		<h4 class="modal-title" id="gridSystemModalLabel">Atenção</h4>
+      		</div>
+      		<div class="modal-body">
+          			<div>Deseja realmente excluir esse banco?</div>
+        	</div>
+      		<div class="modal-footer">
+       	 		<button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        		<button type="button" class="btn btn-success" name="Confirmar" id="Confirmar">Confirmar</button>
+      		</div>
+	    </div>
+	  </div>
+	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="<?php echo site_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
 	<script type="text/javascript" language="javascript">
-			function confirma_exclusao(){
-				alert("Deseja excluir?");
-			}
+		$('#Confirmar').click(function(e) {
+	        e.preventDefault();
+	        window.location.href =  "<?= site_url('delete-bank')."/".$bank['id_bank'];?>"
+		});
 	</script>
 </body>
 </html>
