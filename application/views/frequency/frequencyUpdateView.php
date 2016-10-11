@@ -13,7 +13,7 @@
         <div class="form-group col-md-offset-4 col-md-4">
             <label for="nameType">Tipo da frequencia:</label>
             <input placeholder="Tipo da frequencia  .." value="<?php echo $frequency[0]['nameType'] ?>" type="text"
-                   class="form-control" name="frequency[nameType]">
+                   class="form-control" name="frequency[nameType]" required>
         </div>
     </div>
     <div class="row">

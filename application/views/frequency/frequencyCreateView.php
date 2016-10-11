@@ -1,8 +1,8 @@
-<form action="<?php echo site_url('insert'); ?>" method="post" class="form-group">
+<form action="<?php echo site_url('create'); ?>" method="post" class="form-group">
     <div class="row">
         <div class="form-group col-md-offset-4 col-md-4">
             <label for="nameType">Tipo da frequencia:</label>
-            <input placeholder="Tipo da frequencia  .." type="text" class="form-control" name="frequency[nameType]">
+            <input placeholder="Tipo da frequencia  .." type="text" class="form-control" name="frequency[nameType]" required>
         </div>
     </div>
     <div class="row">

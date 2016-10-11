@@ -55,10 +55,10 @@ $route['translate_uri_dashes'] = FALSE;
 
 //Rotas de Frequencia
 //Insert
-$route['insert-view'] = 'FrequencyController/viewInsert';
-$route['insert'] = 'FrequencyController/insert';
+$route['add'] = 'FrequencyController/add';
+$route['create'] = 'FrequencyController/create';
 //Update
-$route['update-view/(:num)'] = 'FrequencyController/viewUpdate/$1';
+$route['edit/(:num)'] = 'FrequencyController/edit/$1';
 $route['update/(:num)'] = 'FrequencyController/update/$1';
 //Delete
 $route['delete/(:num)'] = 'FrequencyController/delete/$1';
