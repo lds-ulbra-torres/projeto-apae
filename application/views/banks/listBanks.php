@@ -31,7 +31,7 @@
 						<td><?= $bank['name_bank']; ?></td>
 						<td><?= $bank['phone_bank']; ?></td>
 						<td><a type="button" data-toggle="modal" data-target=".bs-example-modal-sm" class="btn btn-danger" >EXCLUIR</a></td>
-						<td><a class="btn btn-warning" href="<?= site_url('update-bank')."/".$bank['id_bank'];?>">ALTERAR</a></td>
+						<td><a class="btn btn-warning" href="<?= site_url('edit-bank')."/".$bank['id_bank'];?>">ALTERAR</a></td>
 					</tr>
 				<?php 
 					} 

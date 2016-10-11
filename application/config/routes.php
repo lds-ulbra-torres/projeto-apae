@@ -53,10 +53,8 @@ $route['default_controller'] = 'BanksController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['create-bank'] = "BanksController/createBank";
-$route['new-bank'] = "BanksController/newBank";
-$route['list-banks'] = "BanksController/listBanks";
-
-$route['delete-bank/(:num)'] = "BanksController/deleteBank/$1";
-
-$route['update-bank/(:num)'] = "BanksController/updateBank/$1";
+$route['create-bank'] = "BanksController/add";
+$route['new-bank'] = "BanksController/create";
+$route['delete-bank/(:num)'] = "BanksController/delete/$1";
+$route['update-bank/(:num)'] = "BanksController/update/$1";
+$route['edit-bank/(:num)'] = "BanksController/edit/$1";
