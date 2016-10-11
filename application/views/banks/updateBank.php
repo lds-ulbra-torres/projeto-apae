@@ -10,7 +10,7 @@
 		<div class="page-header">
 			<h4 style="text-align: center">Editar Banco</h4> <br>
 		</div>
-		<form method="POST" action="<?= site_url('update-bank').'/'.$bank[0]['id_bank']; ?>" onsubmit="return valida_form(this)">
+		<form method="POST" action="<?= site_url('update').'/'.$bank[0]['id_bank']; ?>" onsubmit="return valida_form(this)">
 			<div class="row">
 				<div class="form-group col-md-offset-4 col-md-4">
 					<label for="nome" >ID</label>
@@ -22,22 +22,22 @@
 				<div class="form-group col-md-offset-4 col-md-4">
 					<input type="hidden" value="<?= $bank[0]['id_bank']; ?>" name="bank[id_bank]">
 					<label for="nome">NOME</label>
-					<input class="form-control" type="text" value="<?= $bank[0]['name_bank']; ?> " id="nome" name="bank[name_bank]">
+					<input class="form-control" type="text" value="<?= $bank[0]['name_bank']; ?> " id="nome" name="bank[name_bank]" required>
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-group col-md-offset-4 col-md-4">
 					<label for="telefone">TELEFONE</label>
-					<input class="form-control" type="text" attrname="telephone" value="<?= $bank[0]['phone_bank']; ?> " id="telefone" name="bank[phone_bank]">
+					<input class="form-control" type="text" attrname="telephone" value="<?= $bank[0]['phone_bank']; ?> " id="telefone" name="bank[phone_bank]" required>
 					
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-group col-md-offset-4 col-md-1">
-					<a href="<?= site_url(''); ?>" class="btn btn-primary" >Voltar</a>
+					<a href="<?= site_url(''); ?>" class="btn btn-primary">Voltar</a>
 				</div>
 				<div class="col left">
-					<button type="submit" class="btn btn-success" >Salvar</button>
+					<button type="submit" class="btn btn-success">Salvar</button>
 				</div>
 			</div>
 		</form>

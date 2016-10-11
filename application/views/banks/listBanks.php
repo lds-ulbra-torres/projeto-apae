@@ -11,7 +11,7 @@
 			<div class="page-header">
 				<h4 style="text-align: center"> Bancos </h4> <br>
 			</div>
-			<a class="btn btn-success" href="<?= site_url('create-bank');?>">Novo</a> <br> <br>
+			<a class="btn btn-success" href="<?= site_url('add');?>">Novo</a> <br> <br>
 			<table class="table table-responsive">
 				<thead>
 					<tr>
@@ -31,7 +31,7 @@
 						<td><?= $bank['name_bank']; ?></td>
 						<td><?= $bank['phone_bank']; ?></td>
 						<td><a type="button" data-toggle="modal" data-target=".bs-example-modal-sm" class="btn btn-danger" >EXCLUIR</a></td>
-						<td><a class="btn btn-warning" href="<?= site_url('edit-bank')."/".$bank['id_bank'];?>">ALTERAR</a></td>
+						<td><a class="btn btn-warning" href="<?= site_url('edit')."/".$bank['id_bank'];?>">ALTERAR</a></td>
 					</tr>
 				<?php 
 					} 
@@ -66,7 +66,7 @@
 	<script type="text/javascript" language="javascript">
 		$('#Confirmar').click(function(e) {
 	        e.preventDefault();
-	        window.location.href =  "<?= site_url('delete-bank')."/".$bank['id_bank'];?>"
+	        window.location.href =  "<?= site_url('delete')."/".$bank['id_bank'];?>"
 		});
 	</script>
 </body>

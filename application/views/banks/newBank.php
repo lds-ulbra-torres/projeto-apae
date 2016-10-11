@@ -10,18 +10,17 @@
 		<div class="page-header">
 			<h4 style="text-align: center"> Novo Banco </h4> <br>
 		</div>
-		<form method="POST" action="<?= site_url('new-bank'); ?>" onsubmit="return valida_form(this)"> 
+		<form method="POST" action="<?= site_url('add'); ?>" onsubmit="return valida_form(this)"> 
 			<div class="row">
 				<div class="form-group col-md-offset-4 col-md-4">
 					<label for="nome">Nome do Banco</label>
-					<input class="form-control" type="text" id="nome" name="bank[name_bank]">
-					
+					<input class="form-control" type="text" id="nome" name="bank[name_bank]" required>
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-group col-md-offset-4 col-md-4">
 					<label for="telefone">Telefone do Banco</label>
-					<input type="text"  class="form-control" attrname="telephone1" id="telefone" name="bank[phone_bank]">
+					<input type="text"  class="form-control" attrname="telephone1" id="telefone" name="bank[phone_bank]" required>
 				</div>
 			</div>
 			<div class="row">
@@ -29,7 +28,7 @@
 					<a href="<?= site_url(''); ?>" class="btn btn-primary"> Voltar </a>
 				</div>
 				<div class="col left">
-					<button type="submit" class="btn btn-success" >Criar</button>
+					<button type="submit" class="btn btn-success">Criar</button>
 				</div>
 			</div>
 		</form>
@@ -37,20 +36,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="<?php echo site_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.1.0/vanilla-masker.min.js"></script>
-	<script type="text/javascript" language="javascript">
-		function valida_form (){
-			if(document.getElementById("nome").value == ""){
-				alert('Por favor, preencha o campo nome');
-				document.getElementById("nome").focus();
-			return false
-			}
-			if(document.getElementById("telefone").value == ""){
-				alert('Por favor, preencha o campo telefone');
-				document.getElementById("telefone").focus();
-			return false
-			}
-		}
-	</script>
 	<script type="text/javascript">
 		function inputHandler(masks, max, event) {
 			var c = event.target;
