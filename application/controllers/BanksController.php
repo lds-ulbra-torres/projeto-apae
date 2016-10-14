@@ -15,7 +15,12 @@ class BanksController extends CI_Controller {
 	public function index(){
 		$data = array();
 		$data['banks'] = $this->BanksModel->GetAll();
-		$this->load->view('banks/listBanks',$data);
+		if($data['banks'] != FALSE){
+			$this->load->view('banks/listBanks',$data);
+		}else{
+			show_error("Erro ao pegar os dados da base de dados!");
+		}
+		
 	}
 
 	/**
@@ -34,9 +39,7 @@ class BanksController extends CI_Controller {
 		if($this->BanksModel->Create($this->input->post('bank'))){
 			redirect('/','refresh');
 		}else{
-			$data['heading']= "Erro BD";
-			$data['message']= "Erro ao inserir registro no banco de dados";
-			$this->template->load('errors/html/error_db', $data);
+			show_error("Erro ao inserir no base de dados!");
 		}
 	}
 
@@ -46,22 +49,28 @@ class BanksController extends CI_Controller {
 	* Função que recebe o id do banco e chama a função Delete do Model, após a operação redireciona para a index.
 	*/
 
-	public function delete($id_bank){
-		if($this->BanksModel->Delete($id_bank)){
+	public function delete($idBank){
+		if($this->BanksModel->Delete($idBank)){
 			redirect('/','refresh');
+		}else{
+			show_error("Erro ao tentar deletar na base de dados!");
 		}
 	}
 
-	/**
+	/*
 	* @author Antoni/Nicholas - 27-09-2016 - edit
 	* @param $id_bank - O id do banco a ser atualizado
 	* Função recebe o id do banco e chama a função getOne do Model que retorna os dados de um banco, após esta
 	* operação ele carrega a view para alterar os dados do banco selecionado.
 	*/
 
-	public function edit($id_bank){
-		$data['bank']=$this->BanksModel->getOne($id_bank);
-		$this->load->view('banks/updateBank', $data);
+	public function edit($idBank){
+		$data['bank']=$this->BanksModel->getOne($idBank);
+		if($data['bank']!= FALSE){
+			$this->load->view('banks/updateBank', $data);
+		}else{
+			show_error("Erro ao pegar os dados da base de dados!");
+		}	
 	}
 
 	/**
@@ -72,6 +81,8 @@ class BanksController extends CI_Controller {
 		if ($this->BanksModel->Update($this->input->post('bank'))) {
 			$data['banks'] = $this->BanksModel->GetAll();
 			redirect('/','refresh');
+		}else{
+			show_error("Erro ao tentar atualizar a base de dados!");
 		}
 	}
 

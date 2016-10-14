@@ -27,11 +27,11 @@
 					foreach($banks as $bank){
 				?> 
 					<tr>
-						<td><?= $bank['id_bank'];?> </td>
+						<td><?= $bank['idBank'];?> </td>
 						<td><?= $bank['name_bank']; ?></td>
 						<td><?= $bank['phone_bank']; ?></td>
 						<td><a type="button" data-toggle="modal" data-target=".bs-example-modal-sm" class="btn btn-danger" >EXCLUIR</a></td>
-						<td><a class="btn btn-warning" href="<?= site_url('edit')."/".$bank['id_bank'];?>">ALTERAR</a></td>
+						<td><a class="btn btn-warning" href="<?= site_url('edit')."/".$bank['idBank'];?>">ALTERAR</a></td>
 					</tr>
 				<?php 
 					} 
@@ -52,7 +52,7 @@
         		<h4 class="modal-title" id="gridSystemModalLabel">Atenção</h4>
       		</div>
       		<div class="modal-body">
-          			<div>Deseja realmente excluir esse banco?</div>
+          		<div>Deseja realmente excluir esse banco?</div>
         	</div>
       		<div class="modal-footer">
        	 		<button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
@@ -66,7 +66,7 @@
 	<script type="text/javascript" language="javascript">
 		$('#Confirmar').click(function(e) {
 	        e.preventDefault();
-	        window.location.href =  "<?= site_url('delete')."/".$bank['id_bank'];?>"
+	        window.location.href =  "<?= site_url('delete')."/".$bank['idBank'];?>"
 		});
 	</script>
 </body>

@@ -21,7 +21,7 @@ class BanksModel extends CI_Model {
 	*/
 	public function GetAll(){
 		$banks = $this->db->get($this->table)->result_array();
-		return empty($banks)? null : $banks;
+		return empty($banks)? FALSE : $banks;
 	}
 
 	/**
@@ -30,8 +30,8 @@ class BanksModel extends CI_Model {
 	* @return - retorna true caso seja deletado, false caso não
 	* Função que recebe o id do banco e faz um delete deste registro no bd.
 	*/
-	public function Delete($id_bank){
-		$this->db->where('id_bank',$id_bank);
+	public function Delete($idBank){
+		$this->db->where('idBank',$idBank);
 		return $this->db->delete($this->table) > 0 ? TRUE : FALSE;
 	}
 
@@ -42,9 +42,10 @@ class BanksModel extends CI_Model {
 	* Função que recebe o id do banco e faz uma consulta no bd e retorna esses dados.
 	*/
 
-	public function GetOne($id_bank){
-		$this->db->where('id_bank', $id_bank);
-		return $this->db->get($this->table)->result_array();
+	public function GetOne($idBank){
+		$this->db->where('idBank', $idBank);
+		$bank = $this->db->get($this->table)->result_array();
+		return empty($bank)? FALSE : $bank;
 	}
 
 	/**
@@ -54,12 +55,13 @@ class BanksModel extends CI_Model {
 	* Função que faz a atualização dos dados de um banco no bd e retorna true caso dê certo, false caso não.
 	*/
 	public function Update($bank){
-		$this->db->where('id_bank',$bank['id_bank']);
+		$this->db->where('idBank',$bank['idBank']);
 		if($this->db->update($this->table,$bank)){
 			return TRUE;
 		}else{
 			return FALSE;
 		}
+
 	}
 
 }

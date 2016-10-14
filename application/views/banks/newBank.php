@@ -10,7 +10,7 @@
 		<div class="page-header">
 			<h4 style="text-align: center"> Novo Banco </h4> <br>
 		</div>
-		<form method="POST" action="<?= site_url('add'); ?>" onsubmit="return valida_form(this)"> 
+		<form method="POST" action="<?= site_url('create'); ?>"> 
 			<div class="row">
 				<div class="form-group col-md-offset-4 col-md-4">
 					<label for="nome">Nome do Banco</label>
