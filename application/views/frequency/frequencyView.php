@@ -1,6 +1,6 @@
 <div class="col-md-offset-2 col-md-8">
     <h4>Frequências - </h4>
-    <a class="btn btn-success" href="<?php echo site_url('add'); ?>">Nova Frequência</a>
+    <a class="btn btn-success" href="<?= site_url('add'); ?>">Nova Frequência</a>
     <br><br>
     <table class="table table-responsive">
         <thead>
@@ -15,10 +15,10 @@
         if ($frequencies != null) {
             foreach ($frequencies as $frequency): ?>
                 <tr>
-                    <td><?php echo $frequency['idFrequency']; ?></td>
-                    <td><?php echo $frequency['nameType']; ?></td>
+                    <td><?= $frequency['idFrequency']; ?></td>
+                    <td><?= $frequency['frequency_description']; ?></td>
                     <td><a class="btn btn-primary"
-                           href="<?php echo site_url('edit') . "/" . $frequency['idFrequency']; ?>">Editar</a>
+                           href="<?= site_url('edit') . "/" . $frequency['idFrequency']; ?>">Editar</a>
                     </td>
                     <td><a class="btn btn-danger" data-toggle="modal" data-target="#modalExcluir">Excluir</a></td>
                 </tr>
@@ -43,7 +43,7 @@
             </div>
             <div class="modal-footer">
                 <a type="button" class="btn btn-danger"
-                        href="<?php echo site_url('delete') . "/" . $frequency['idFrequency']; ?>">Apagar
+                   href="<?= site_url('delete') . "/" . $frequency['idFrequency']; ?>">Apagar
                 </a>
                 <a type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</a>
             </div>

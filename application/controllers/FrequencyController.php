@@ -26,7 +26,7 @@ class FrequencyController extends CI_Controller
      */
     public function create()
     {
-        $this->form_validation->set_rules('frequency[nameType]', 'nameType', 'trim|required');
+        $this->form_validation->set_rules('frequency[frequency_description]', 'frequency_description', 'trim|required');
 
         if ($this->form_validation->run()) {
             if ($this->FrequencyModel->insert($this->input->post('frequency'))) {
@@ -63,7 +63,7 @@ class FrequencyController extends CI_Controller
      */
     public function update()
     {
-        $this->form_validation->set_rules('frequency[nameType]', 'nameType', 'trim|required');
+        $this->form_validation->set_rules('frequency[frequency_description]', 'frequency_description', 'trim|required');
 
         if ($this->form_validation->run()) {
             if ($this->FrequencyModel->update($this->input->post('frequency'))) {
