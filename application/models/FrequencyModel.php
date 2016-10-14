@@ -46,7 +46,7 @@ class FrequencyModel extends CI_Model
     public function update($pFrequency)
     {
         $this->db->where('idFrequency', $pFrequency['idFrequency']);
-        return $this->db->update($this->table, $pFrequency) == TRUE ? TRUE : FALSE;
+        return $this->db->update($this->table, $pFrequency) > 0 ? TRUE : FALSE;
     }
 
     /**
