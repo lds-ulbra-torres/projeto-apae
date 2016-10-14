@@ -49,8 +49,8 @@ class BanksController extends CI_Controller {
 	* Função que recebe o id do banco e chama a função Delete do Model, após a operação redireciona para a index.
 	*/
 
-	public function delete($idBank){
-		if($this->BanksModel->Delete($idBank)){
+	public function delete($id_bank){
+		if($this->BanksModel->Delete($id_bank)){
 			redirect('/','refresh');
 		}else{
 			show_error("Erro ao tentar deletar na base de dados!");
@@ -64,8 +64,8 @@ class BanksController extends CI_Controller {
 	* operação ele carrega a view para alterar os dados do banco selecionado.
 	*/
 
-	public function edit($idBank){
-		$data['bank']=$this->BanksModel->getOne($idBank);
+	public function edit($id_bank){
+		$data['bank']=$this->BanksModel->getOne($id_bank);
 		if($data['bank']!= FALSE){
 			$this->load->view('banks/updateBank', $data);
 		}else{

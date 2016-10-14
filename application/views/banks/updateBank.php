@@ -10,17 +10,17 @@
 		<div class="page-header">
 			<h4 style="text-align: center">Editar Banco</h4> <br>
 		</div>
-		<form method="POST" action="<?= site_url('update').'/'.$bank[0]['idBank']; ?>" onsubmit="return valida_form(this)">
+		<form method="POST" action="<?= site_url('update').'/'.$bank[0]['id_bank']; ?>" onsubmit="return valida_form(this)">
 			<div class="row">
 				<div class="form-group col-md-offset-4 col-md-4">
 					<label for="nome" >ID</label>
-					<input class="form-control" type="text" readonly value="<?= $bank[0]['idBank']; ?>" name="bank[idBank]">
+					<input class="form-control" type="text" readonly value="<?= $bank[0]['id_bank']; ?>" name="bank[id_bank]">
 
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-group col-md-offset-4 col-md-4">
-					<input type="hidden" value="<?= $bank[0]['idBank']; ?>" name="bank[idBank]">
+					<input type="hidden" value="<?= $bank[0]['id_bank']; ?>" name="bank[id_bank]">
 					<label for="nome">NOME</label>
 					<input class="form-control" type="text" value="<?= $bank[0]['name_bank']; ?> " id="nome" name="bank[name_bank]" required>
 				</div>
