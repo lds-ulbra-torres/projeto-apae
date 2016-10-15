@@ -61,7 +61,7 @@
 	    </div>
 	  </div>
 	</div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="<?php echo site_url('assets/js/jquery-3.1.1.min.js'); ?>"></script>
     <script src="<?php echo site_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
 	<script type="text/javascript" language="javascript">
 		$('#Confirmar').click(function(e) {

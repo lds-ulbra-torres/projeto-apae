@@ -8,9 +8,9 @@
 <body>
 	<div class="container">
 		<div class="page-header">
-			<h4 style="text-align: center">Editar Banco</h4> <br>
+			<h4 style="text-align: center">Alterar Dados </h4> <br>
 		</div>
-		<form method="POST" action="<?= site_url('update').'/'.$bank[0]['id_bank']; ?>" onsubmit="return valida_form(this)">
+		<form method="POST" action="<?= site_url('update').'/'.$bank[0]['id_bank']; ?>">
 			<div class="row">
 				<div class="form-group col-md-offset-4 col-md-4">
 					<label for="nome" >ID</label>
@@ -42,19 +42,9 @@
 			</div>
 		</form>
 	</div>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="<?php echo site_url('assets/js/jquery-3.1.1.min.js'); ?>"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.1.0/vanilla-masker.min.js"></script>
 	<script src="<?php echo site_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
-	<script type="text/javascript" language="javascript">
-		function valida_form (){
-			if(document.getElementById("nome").value == ""){
-				alert('Por favor, preencha o campo nome');
-				document.getElementById("nome").focus();
-			return false
-			}
-		}
-	</script>
 	<script type="text/javascript" language="javascript">
 		function inputHandler(masks, max, event) {
 			var c = event.target;
