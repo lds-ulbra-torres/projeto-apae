@@ -30,7 +30,7 @@ class FrequencyController extends CI_Controller
 
         if ($this->form_validation->run()) {
             if ($this->FrequencyModel->insert($this->input->post('frequency'))) {
-                redirect(site_url(''), 'refresh');
+                redirect(site_url('frequency'), 'refresh');
             } else {
                 //redirect(site_url('add'), 'refresh');
                 //echo "<script>alert('Não inserido.')</script>";
@@ -67,7 +67,7 @@ class FrequencyController extends CI_Controller
 
         if ($this->form_validation->run()) {
             if ($this->FrequencyModel->update($this->input->post('frequency'))) {
-                redirect(site_url(''), 'refresh');
+                redirect(site_url('frequency'), 'refresh');
             } else {
                 $data['heading'] = "Erro ao atualizar -";
                 $data['message'] = "Erro ao atualizar a frequencia, tente novamente.";
@@ -89,7 +89,7 @@ class FrequencyController extends CI_Controller
     {
         if ($this->FrequencyModel->delete($pId)) {
             //redireciona pra rota default
-            redirect(site_url(''));
+            echo  'Cadastro Excluido!';
         } else {
             $data['heading'] = "Erro ao deletar -";
             $data['message'] = "Erro ao deletar a frequencia, tente novamente.";

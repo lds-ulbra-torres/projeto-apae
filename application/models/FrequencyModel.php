@@ -12,6 +12,7 @@ class FrequencyModel extends CI_Model
      */
     public function getAll()
     {
+        $this->db->order_by('frequency_description','asc');
         $this->db->from($this->table);
         $query = $this->db->get()->result_array();
         return empty($query) ? null : $query;
