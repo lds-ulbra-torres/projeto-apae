@@ -21,15 +21,38 @@
 			<div class="row">
 				<div class="form-group col-md-offset-4 col-md-4">
 					<input type="hidden" value="<?= $bank[0]['id_bank']; ?>" name="bank[id_bank]">
-					<label for="nome">NOME</label>
-					<input class="form-control" type="text" value="<?= $bank[0]['name_bank']; ?> " id="nome" name="bank[name_bank]" required>
+					<label for="name">NOME</label>
+					<input class="form-control" type="text" value="<?= $bank[0]['name_bank']; ?> " id="name" name="bank[name_bank]" required>
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-group col-md-offset-4 col-md-4">
-					<label for="telefone">TELEFONE</label>
-					<input class="form-control" type="text" attrname="telephone" value="<?= $bank[0]['phone_bank']; ?> " id="telefone" name="bank[phone_bank]" required>
-					
+					<label for="telephone">TELEFONE</label>
+					<input class="form-control" type="text" attrname="telephone" value="<?= $bank[0]['phone_bank']; ?> " id="telepnone" name="bank[phone_bank]" required>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-offset-4 col-md-4">
+					<label for="agency_number">NÚMERO DA AGÊNCIA</label>
+					<input class="form-control" onkeyup="somenteNumeros(this);" type="text" value="<?= $bank[0]['agency_number']; ?> " id="agency_number" name="bank[agency_number]" required>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-offset-4 col-md-4">
+					<label for="telefone">DÍGITO VERIFICADOR DA AGÊNCIA</label>
+					<input class="form-control" onkeyup="somenteNumeros(this);" type="text" maxlength="1" value="<?= $bank[0]['check_digit_agency']; ?> " id="check_digit_agency" name="bank[check_digit_agency]" required>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-offset-4 col-md-4">
+					<label for="account_number">NÚMERO DA CONTA</label>
+					<input class="form-control" onkeyup="somenteNumeros(this);" type="text" value="<?= $bank[0]['account_number']; ?> " id="account_number" name="bank[account_number]" required>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-offset-4 col-md-4">
+					<label for="check_digit_account">DÍGITO VERIFICADOR DA CONTA CORRENTE</label>
+					<input class="form-control" onkeyup="somenteNumeros(this);" maxlength="1" type="text" value="<?= $bank[0]['check_digit_account']; ?> " id="check_digit_account" name="bank[check_digit_account]" required>
 				</div>
 			</div>
 			<div class="row">
@@ -41,6 +64,7 @@
 				</div>
 			</div>
 		</form>
+		<div id="destino"></div>
 	</div>
 	<script src="<?php echo site_url('assets/js/jquery-3.1.1.min.js'); ?>"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.1.0/vanilla-masker.min.js"></script>
@@ -59,5 +83,15 @@
 		VMasker(tel).maskPattern(telMask[0]);
 		tel.addEventListener('input', inputHandler.bind(undefined, telMask, 14), false);
 	</script>
+	<script>
+	    function somenteNumeros(num) {
+	        var er = /[^0-9.]/;
+	        er.lastIndex = 0;
+	        var campo = num;
+	        if (er.test(campo.value)) {
+	          campo.value = "";
+	        }
+	    }
+ 	</script>
 </body>
 </html>

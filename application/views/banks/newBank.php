@@ -13,14 +13,38 @@
 		<form method="POST" action="<?= site_url('create'); ?>"> 
 			<div class="row">
 				<div class="form-group col-md-offset-4 col-md-4">
-					<label for="nome">Nome do Banco</label>
-					<input class="form-control" type="text" id="nome" name="bank[name_bank]" required>
+					<label for="name">Nome do Banco</label>
+					<input class="form-control" type="text" id="name" name="bank[name_bank]" required>
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-group col-md-offset-4 col-md-4">
-					<label for="telefone">Telefone do Banco</label>
-					<input type="text"  class="form-control" attrname="telephone1" id="telefone" name="bank[phone_bank]" required>
+					<label for="telephone">Telefone do Banco</label>
+					<input type="text"  class="form-control" attrname="telephone1" id="telephone" name="bank[phone_bank]" required>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-offset-4 col-md-4">
+					<label for="agency_number">Número da Agência</label>
+					<input type="text"  class="form-control" onkeyup="somenteNumeros(this);" id="agency_number" name="bank[agency_number]" required>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-offset-4 col-md-4">
+					<label for="check_digit_agency">Dígito Verificador da Agência</label>
+					<input type="text"  class="form-control" onkeyup="somenteNumeros(this);" maxlength="1" id="check_digit_agency" name="bank[check_digit_agency]" required>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-offset-4 col-md-4">
+					<label for="account_number">Número da Conta Corrente</label>
+					<input type="text"  class="form-control" onkeyup="somenteNumeros(this);" id="account_number" name="bank[account_number]" required>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-offset-4 col-md-4">
+					<label for="check_digit_account">Dígito Verificador da Conta Corrente</label>
+					<input type="text" class="form-control"  onkeyup="somenteNumeros(this);" maxlength="1" id="check_digit_account" name="bank[check_digit_account]" required>
 				</div>
 			</div>
 			<div class="row">
@@ -50,5 +74,15 @@
 		VMasker(tel).maskPattern(telMask[0]);
 		tel.addEventListener('input', inputHandler.bind(undefined, telMask, 14), false);
 	</script>
+	<script>
+	    function somenteNumeros(num) {
+	        var er = /[^0-9.]/;
+	        er.lastIndex = 0;
+	        var campo = num;
+	        if (er.test(campo.value)) {
+	          campo.value = "";
+	        }
+	    }
+ 	</script>
 </body>
 </html>

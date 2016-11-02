@@ -18,7 +18,10 @@
 						<th>Código</th>
 						<th>Nome</th>
 						<th>Telefone</th>
-
+						<th>Agência</th>
+						<th>Dígito Verificador</th>
+						<th>Conta</th>
+						<th>Dígito Verificador</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -30,6 +33,10 @@
 						<td><?= $bank['id_bank'];?> </td>
 						<td><?= $bank['name_bank']; ?></td>
 						<td><?= $bank['phone_bank']; ?></td>
+						<td><?= $bank['agency_number']; ?></td>
+						<td><?= $bank['check_digit_agency']; ?></td>
+						<td><?= $bank['account_number']; ?></td>
+						<td><?= $bank['check_digit_account']; ?></td>
 						<td><a type="button" data-toggle="modal" data-target=".bs-example-modal-sm" class="btn btn-danger" >EXCLUIR</a></td>
 						<td><a class="btn btn-warning" href="<?= site_url('edit')."/".$bank['id_bank'];?>">ALTERAR</a></td>
 					</tr>
