@@ -12,38 +12,34 @@
 		</div>
 		<form method="POST" action="<?= site_url('create'); ?>"> 
 			<div class="row">
-				<div class="form-group col-md-offset-4 col-md-4">
-					<label for="name">Nome do Banco</label>
+				<div class="form-group col-md-offset-4 col-md-3">
+					<label for="name">Nome</label>
 					<input class="form-control" type="text" id="name" name="bank[name_bank]" required>
 				</div>
 			</div>
 			<div class="row">
-				<div class="form-group col-md-offset-4 col-md-4">
-					<label for="telephone">Telefone do Banco</label>
+				<div class="form-group col-md-offset-4 col-md-3">
+					<label for="telephone">Telefone</label>
 					<input type="text"  class="form-control" attrname="telephone1" id="telephone" name="bank[phone_bank]" required>
 				</div>
 			</div>
 			<div class="row">
-				<div class="form-group col-md-offset-4 col-md-4">
-					<label for="agency_number">Número da Agência</label>
+				<div class="form-group col-md-offset-4 col-md-2">
+					<label for="agency_number">Agência</label>
 					<input type="text"  class="form-control" onkeyup="somenteNumeros(this);" id="agency_number" name="bank[agency_number]" required>
 				</div>
-			</div>
-			<div class="row">
-				<div class="form-group col-md-offset-4 col-md-4">
-					<label for="check_digit_agency">Dígito Verificador da Agência</label>
+				<div class="form-group col-md-1">
+					<label for="check_digit_agency">DV</label>
 					<input type="text"  class="form-control" onkeyup="somenteNumeros(this);" maxlength="1" id="check_digit_agency" name="bank[check_digit_agency]" required>
 				</div>
 			</div>
 			<div class="row">
-				<div class="form-group col-md-offset-4 col-md-4">
-					<label for="account_number">Número da Conta Corrente</label>
+				<div class="form-group col-md-offset-4 col-md-2">
+					<label for="account_number">Conta Corrente</label>
 					<input type="text"  class="form-control" onkeyup="somenteNumeros(this);" id="account_number" name="bank[account_number]" required>
 				</div>
-			</div>
-			<div class="row">
-				<div class="form-group col-md-offset-4 col-md-4">
-					<label for="check_digit_account">Dígito Verificador da Conta Corrente</label>
+				<div class="form-group col-md-1">
+					<label for="check_digit_account">DV</label>
 					<input type="text" class="form-control"  onkeyup="somenteNumeros(this);" maxlength="1" id="check_digit_account" name="bank[check_digit_account]" required>
 				</div>
 			</div>

@@ -19,9 +19,9 @@
 						<th>Nome</th>
 						<th>Telefone</th>
 						<th>Agência</th>
-						<th>Dígito Verificador</th>
-						<th>Conta</th>
-						<th>Dígito Verificador</th>
+						<th>DV</th>
+						<th>Conta Corrente</th>
+						<th>DV</th>
 					</tr>
 				</thead>
 				<tbody>
