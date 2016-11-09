@@ -11,6 +11,16 @@
 			<div class="page-header">
 				<h4 style="text-align: center"> Bancos </h4> <br>
 			</div>
+			<div class="row">
+					<div class="form-group col-md-offset-4 col-md-4">
+						<?php if($this->session->flashdata("success")): ?>
+							<p class="alert alert-success alerts-hide">  <?=  $this->session->flashdata("success") ?>  </p>			
+						<?php endif ?>
+						<?php if($this->session->flashdata("danger")): ?>
+							<p class="alert alert-danger alerts-hide">  <?=  $this->session->flashdata("danger")?>  </p>
+						<?php endif ?>
+					</div>
+				</div>
 			<a class="btn btn-success" href="<?= site_url('add');?>">Novo</a> <br> <br>
 			<table class="table table-responsive">
 				<thead>
@@ -74,6 +84,13 @@
 		$('#Confirmar').click(function(e) {
 	        e.preventDefault();
 	        window.location.href =  "<?= site_url('delete')."/".$bank['id_bank'];?>"
+		});
+	</script>
+	<script type="text/javascript" language="javascript">
+		$(document).ready(function () {
+		    $(".alerts-hide").click(function () {
+		        $('.alerts-hide').hide(500);
+		    });
 		});
 	</script>
 </body>

@@ -14,40 +14,40 @@
 			<div class="row">
 				<div class="form-group col-md-offset-4 col-md-3">
 					<label for="name">Nome</label>
-					<input class="form-control" type="text" id="name" name="bank[name_bank]" required>
+					<input placeholder="Banco Apae" class="form-control" type="text" id="name" name="bank[name_bank]" required>
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-group col-md-offset-4 col-md-3">
 					<label for="telephone">Telefone</label>
-					<input type="text"  class="form-control" attrname="telephone1" id="telephone" name="bank[phone_bank]" required>
+					<input type="text" placeholder="(00) 0000-0000" class="form-control" attrname="telephone1" id="telephone" name="bank[phone_bank]" required>
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-group col-md-offset-4 col-md-2">
 					<label for="agency_number">Agência</label>
-					<input type="text"  class="form-control" onkeyup="somenteNumeros(this);" id="agency_number" name="bank[agency_number]" required>
+					<input type="text" placeholder="0000" class="form-control" onkeyup="somenteNumeros(this);" id="agency_number" name="bank[agency_number]" required>
 				</div>
 				<div class="form-group col-md-1">
 					<label for="check_digit_agency">DV</label>
-					<input type="text"  class="form-control" onkeyup="somenteNumeros(this);" maxlength="1" id="check_digit_agency" name="bank[check_digit_agency]" required>
+					<input type="text" placeholder="0" class="form-control" onkeyup="somenteNumeros(this);" maxlength="1" id="check_digit_agency"  name="bank[check_digit_agency]" required>
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-group col-md-offset-4 col-md-2">
 					<label for="account_number">Conta Corrente</label>
-					<input type="text"  class="form-control" onkeyup="somenteNumeros(this);" id="account_number" name="bank[account_number]" required>
+					<input type="text" placeholder="0000" class="form-control" onkeyup="somenteNumeros(this);" id="account_number" name="bank[account_number]" required>
 				</div>
 				<div class="form-group col-md-1">
 					<label for="check_digit_account">DV</label>
-					<input type="text" class="form-control"  onkeyup="somenteNumeros(this);" maxlength="1" id="check_digit_account" name="bank[check_digit_account]" required>
+					<input type="text" class="form-control" placeholder="0" onkeyup="somenteNumeros(this);" maxlength="1" id="check_digit_account" name="bank[check_digit_account]" required>
 				</div>
 			</div>
 			<div class="row">
-				<div class="form-group col-md-offset-4 col-md-1">
+				<div class="form-group col-md-offset-4 col-md-2">
 					<a href="<?= site_url(''); ?>" class="btn btn-primary"> Voltar </a>
 				</div>
-				<div class="col left">
+				<div class="form-group col-md-2">
 					<button type="submit" class="btn btn-success">Criar</button>
 				</div>
 			</div>

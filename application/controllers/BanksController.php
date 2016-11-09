@@ -18,7 +18,7 @@ class BanksController extends CI_Controller {
 		if($data['banks'] != FALSE){
 			$this->load->view('banks/listBanks',$data);
 		}else{
-			show_error("Erro ao pegar os dados da base de dados!");
+			$this->session->set_flashdata("danger", "Erro ao buscar informações da base de dados!");
 		}
 		
 	}
@@ -37,10 +37,11 @@ class BanksController extends CI_Controller {
 	*/
 	public function create(){
 		if($this->BanksModel->Create($this->input->post('bank'))){
-			redirect('/','refresh');
+			$this->session->set_flashdata("success", "Banco criado com sucesso!");
 		}else{
-			show_error("Erro ao inserir no base de dados!");
+			$this->session->set_flashdata("danger", "Erro ao criar banco!");
 		}
+		redirect('/','refresh');
 	}
 
 	/**
@@ -51,10 +52,11 @@ class BanksController extends CI_Controller {
 
 	public function delete($id_bank){
 		if($this->BanksModel->Delete($id_bank)){
-			redirect('/','refresh');
+			$this->session->set_flashdata("success", "Banco removido com sucesso!");
 		}else{
-			show_error("Erro ao tentar deletar na base de dados!");
+			$this->session->set_flashdata("danger", "Erro ao remover banco!");
 		}
+		redirect('/','refresh');
 	}
 
 	/*
@@ -65,11 +67,12 @@ class BanksController extends CI_Controller {
 	*/
 
 	public function edit($id_bank){
-		$data['bank']=$this->BanksModel->getOne($id_bank);
+		$data['bank']= $this->BanksModel->getOne($id_bank);
 		if($data['bank']!= FALSE){
 			$this->load->view('banks/updateBank', $data);
 		}else{
-			show_error("Erro ao pegar os dados da base de dados!");
+			$this->session->set_flashdata("danger", "Erro ao buscar registro na base de dados!");
+			redirect('/','refresh');
 		}	
 	}
 
@@ -79,11 +82,11 @@ class BanksController extends CI_Controller {
 	*/
 	public function update(){
 		if ($this->BanksModel->Update($this->input->post('bank'))) {
-			$data['banks'] = $this->BanksModel->GetAll();
-			redirect('/','refresh');
+			$this->session->set_flashdata("success", "Banco atualizado com sucesso!");
 		}else{
-			show_error("Erro ao tentar atualizar a base de dados!");
+			$this->session->set_flashdata("danger", "Erro ao atualizar banco!");
 		}
+		redirect('/','refresh');
 	}
 
 
